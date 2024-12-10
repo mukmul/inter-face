@@ -1,6 +1,5 @@
 rootProject.name = 'inter-face'
 include 'application'
-include 'uuser'
 include 'user'
 include 'mysql'
 include 'mongodb'

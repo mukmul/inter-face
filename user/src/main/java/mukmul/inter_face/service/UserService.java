@@ -1,6 +1,5 @@
 package mukmul.inter_face.service;
 
-import lombok.RequiredArgsConstructor;
 import mukmul.inter_face.user.UserEntity;
 import mukmul.inter_face.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

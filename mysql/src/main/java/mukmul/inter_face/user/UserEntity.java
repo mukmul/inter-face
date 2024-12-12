@@ -22,7 +22,7 @@ public class UserEntity {
     @Column(length = 50, nullable = false)
     private String userEmail;
 
-    @Column(length = 20, nullable = false)
+    @Column(length = 60, nullable = false)
     private String userPassword;
 
     @Column(length = 10, nullable = false)
@@ -37,7 +37,7 @@ public class UserEntity {
     @Column(length = 7, nullable = false)
     private String userNickname;
 
-    @Column(length = 50, nullable = true)
+    @Column(length = 50)
     private String userFavor;
 
     private LocalDateTime deletedAt;

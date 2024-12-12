@@ -2,7 +2,6 @@ package mukmul.inter_face.user;
 
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 
@@ -11,7 +10,8 @@ import java.time.LocalDateTime;
 @Getter
 @EqualsAndHashCode
 @NoArgsConstructor
-@SuperBuilder
+@Builder
+@AllArgsConstructor
 public class UserEntity {
 
     @Id
@@ -41,5 +41,9 @@ public class UserEntity {
     private String userFavor;
 
     private LocalDateTime deletedAt;
+
+    public void delete() {
+        this.deletedAt = LocalDateTime.now();
+    }
 
 }

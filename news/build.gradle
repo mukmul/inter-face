@@ -41,6 +41,9 @@ dependencies {
 
     implementation project(':mysql')
     implementation project(':common')
+
+    implementation 'com.h2database:h2'
+
 }
 
 test {

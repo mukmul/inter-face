@@ -25,6 +25,9 @@ dependencies {
 	// Spring Boot Starter Web 의존성 (RestTemplate 포함)
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
+	implementation project(':news')
+	implementation 'com.h2database:h2'
+
 }
 
 tasks.named('test') {

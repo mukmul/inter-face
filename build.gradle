@@ -27,7 +27,7 @@ dependencies {
 
 	implementation project(':news')
 	implementation 'com.h2database:h2'
-
+	implementation project(':common')
 }
 
 tasks.named('test') {

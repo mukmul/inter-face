@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 @Service
 public class NewsService
@@ -47,6 +48,7 @@ public class NewsService
         }
         return newsArray;
     }
+
     public NewsEntity saveNewsArticles(NewsResponse.Article article)
     {
         NewsEntity newsEntity= NewsEntity.builder()
@@ -58,5 +60,24 @@ public class NewsService
                 .build();
         return newsRepository.save(newsEntity);
     }
+
+    public NewsEntity getNewsById(Long newsId)
+    {
+        return newsRepository.findById(newsId)
+                .orElseThrow(()-> new NoSuchElementException(newsId+"아이디의 뉴스는 없습니다"));
+    }
+
+    public void increaseNewsViews(Long newsId)
+    {
+        NewsEntity news =  getNewsById(newsId);
+        news.increaseNewsViews();
+    }
+
+    public void increaseNewsBlocks(Long newsId)
+    {
+        NewsEntity news =  getNewsById(newsId);
+        news.increaseNewsBlocks();
+    }
+
 
 }

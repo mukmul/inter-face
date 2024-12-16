@@ -25,7 +25,7 @@ public class NewsEntity
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private long newsId;
+    private Long newsId;
 
     @Column(length =200, nullable = false)
     private String newsTitle;

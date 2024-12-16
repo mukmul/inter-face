@@ -1,4 +1,4 @@
-package service;
+package mukmul.inter_face.service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

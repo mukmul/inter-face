@@ -25,7 +25,7 @@ public class UserEntity {
     @Column(length = 60, nullable = false)
     private String userPassword;
 
-    @Column(length = 10, nullable = false)
+    @Column(length = 20, nullable = false)
     private String userName;
 
     @Column(length = 50, nullable = false)
@@ -34,7 +34,7 @@ public class UserEntity {
     @Column(length = 11, nullable = false)
     private String userPhone;
 
-    @Column(length = 7, nullable = false)
+    @Column(length = 20, nullable = false)
     private String userNickname;
 
     @Column(length = 50)

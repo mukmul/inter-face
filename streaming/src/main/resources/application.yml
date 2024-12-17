@@ -1,0 +1,15 @@
+spring:
+  data:
+    redis:
+      host:
+      port:
+      database: 1
+      lettuce:
+        pool:
+          max-active: 8
+          enabled: true
+          max-idle: 8
+          min-idle: 0
+    application:
+      stream:
+        key-prefix: messaging_stream

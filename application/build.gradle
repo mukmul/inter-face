@@ -1,19 +1,56 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '3.4.0'
+    id 'io.spring.dependency-management' version '1.1.6'
 }
 
 group = 'mukmul'
 version = '0.0.1-SNAPSHOT'
 
-repositories {
-    mavenCentral()
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation project(':user')
+    implementation project(':agreement')
+    implementation project(':store')
+    implementation project(':streaming')
+    implementation project(':schedule')
+    implementation project(':region')
+    implementation project(':recommend')
+    implementation project(':post')
+    implementation project(':point')
+    implementation project(':pay')
+    implementation project(':notification')
+    implementation project(':news')
+    implementation project(':location')
+    implementation project(':like')
+    implementation project(':item')
+    implementation project(':file')
+    implementation project(':exchange')
+    implementation project(':common')
+    implementation project(':comment')
+    implementation project(':chat')
+    implementation project(':businesscard')
+    implementation project(':board')
+    implementation project(':block')
+    implementation project(':badge')
+
 }
 
 test {
     useJUnitPlatform()
+}
+
+bootJar {
+    enabled = true
+}
+
+jar {
+    enabled = false
 }

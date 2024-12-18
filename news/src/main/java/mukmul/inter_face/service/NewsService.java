@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.NoSuchElementException;
 //restTemplate 빈으로 등록하기, 예외 클래스 만들기
 @Service
@@ -94,6 +95,7 @@ public class NewsService
 
         }
 
+        return new ArrayList<>();
     }
 
     //반환용

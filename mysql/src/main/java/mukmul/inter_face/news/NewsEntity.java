@@ -5,14 +5,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import org.hibernate.loader.LoaderLogging;
-import org.springframework.format.annotation.DateTimeFormat;
 
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
+import java.time.*;
 
 @Entity
 @Table(name = "news")
@@ -40,7 +35,7 @@ public class NewsEntity
     private String newsAuthor;
 
     @Column(length = 20,nullable = false)
-    private String newsCreatedAt;
+    private LocalDateTime newsCreatedAt;
 
     @Column(nullable = false)
     private int newsViews=0;
@@ -57,12 +52,8 @@ public class NewsEntity
         this.newsBlock++;
     }
 
-    public static String formatCreatedAt(String input)
-    {
-        Instant instant = Instant.parse(input);
-        LocalDateTime localDateTime =instant.atZone(ZoneId.of("UTC")).toLocalDateTime();
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        return localDateTime.format(formatter);
+    public static LocalDateTime formatCreatedAt(String publishedAt) {
+        ZonedDateTime zonedDateTime = ZonedDateTime.parse(publishedAt);  // ISO 8601 형식으로 파싱 (Z는 UTC를 나타냄)
+        return zonedDateTime.withZoneSameInstant(ZoneOffset.UTC).toLocalDateTime();  // UTC 타임존에 맞게 변환 후 LocalDateTime 반환
     }
 }

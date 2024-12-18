@@ -1,13 +1,12 @@
-package mukmul.inter_face.news;
+package mukmul.inter_face.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
 import java.util.List;
 @Getter
 @Setter
-public class NewsResponse {
+public class NewsApiResponse {
     private String status;
     private int totalResults;
     private List<Article> articles;

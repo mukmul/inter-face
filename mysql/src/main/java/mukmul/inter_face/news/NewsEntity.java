@@ -31,7 +31,7 @@ public class NewsEntity
     @Column(nullable = false)
     private String newsSource;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 60)
     private String newsAuthor;
 
     @Column(length = 20,nullable = false)
@@ -51,7 +51,9 @@ public class NewsEntity
     public void increaseNewsBlocks(){
         this.newsBlock++;
     }
-
+    public static String formatAuthor(String author){
+        return author.split(" ")[0];
+    }
     public static LocalDateTime formatCreatedAt(String publishedAt) {
         ZonedDateTime zonedDateTime = ZonedDateTime.parse(publishedAt);  // ISO 8601 형식으로 파싱 (Z는 UTC를 나타냄)
         return zonedDateTime.withZoneSameInstant(ZoneOffset.UTC).toLocalDateTime();  // UTC 타임존에 맞게 변환 후 LocalDateTime 반환

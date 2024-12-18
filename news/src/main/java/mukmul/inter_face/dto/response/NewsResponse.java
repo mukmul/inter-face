@@ -1,14 +1,15 @@
-package mukmul.inter_face.news;
+package mukmul.inter_face.dto.response;
 
 
 import lombok.Builder;
 import lombok.Getter;
+import mukmul.inter_face.news.NewsEntity;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Builder
-public class NewsDto
+public class NewsResponse
 {
     private Long newsId;
     private String newsTitle;
@@ -19,8 +20,8 @@ public class NewsDto
     private int newsViews;
     private int newsBlock;
 
-    public static NewsDto fromEntity(NewsEntity newsEntity) {
-        return NewsDto.builder()
+    public static NewsResponse fromEntity(NewsEntity newsEntity) {
+        return NewsResponse.builder()
                 .newsId(newsEntity.getNewsId())
                 .newsTitle(newsEntity.getNewsTitle())
                 .newsContent(newsEntity.getNewsContent())

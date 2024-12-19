@@ -72,7 +72,7 @@ public class NewsService
                     .newsContent(article.getDescription())
                     .newsTitle(article.getTitle())
                     .newsSource(article.getSource().getName())
-                    .newsCreatedAt(NewsEntity.formatCreatedAt(article.getPublishedAt()))
+                    .createdAt(NewsEntity.formatCreatedAt(article.getPublishedAt()))
                     .build();
             newsRepository.save(newsEntity);
         } catch (Exception e) {

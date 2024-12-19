@@ -35,21 +35,20 @@ public class NewsEntity
     private String newsAuthor;
 
     @Column(length = 20,nullable = false)
-    private LocalDateTime newsCreatedAt;
+    private LocalDateTime createdAt;
 
     @Column(nullable = false)
     private int newsViews=0;
 
     @Column(nullable = false)
-    private int newsBlock=0;
-
+    private int newsBlocks =0;
 
 
     public void increaseNewsViews(){
         this.newsViews++;
     }
     public void increaseNewsBlocks(){
-        this.newsBlock++;
+        this.newsBlocks++;
     }
     public static String formatAuthor(String author){
         return author.split(" ")[0];

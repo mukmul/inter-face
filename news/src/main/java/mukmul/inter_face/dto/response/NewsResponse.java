@@ -27,9 +27,9 @@ public class NewsResponse
                 .newsContent(newsEntity.getNewsContent())
                 .newsSource(newsEntity.getNewsSource())
                 .newsAuthor(newsEntity.getNewsAuthor())
-                .newsCreatedAt(newsEntity.getNewsCreatedAt())
+                .newsCreatedAt(newsEntity.getCreatedAt())
                 .newsViews(newsEntity.getNewsViews())
-                .newsBlock(newsEntity.getNewsBlock())
+                .newsBlock(newsEntity.getNewsBlocks())
                 .build();
     }
 }

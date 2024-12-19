@@ -1,13 +1,13 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/mydb?useSSL=false&serverTimezone=UTC
-    username: "root"
-    password: "root1234!@"
+    url: jdbc:mysql://:3306/inter_face?useSSL=false&serverTimezone=UTC
+    username: ""
+    password: ""
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   data:
     mongodb:
-      uri: mongodb://localhost:27017/inter_face
+      uri: mongodb://@:27017/inter_face
       database: inter_face
 jpa:
   hibernate:
